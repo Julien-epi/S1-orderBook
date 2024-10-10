@@ -3,7 +3,7 @@ OrderBook
 OrderBook est un contrat intelligent permettant de placer et de prendre des ordres d'achat et de vente pour des tokens ERC20 sur le réseau de test Sepolia d'Ethereum.
 
 Installation
-git clone https://github.com/votre-utilisateur/orderbook-project.git
+git clone git@github.com:Julien-epi/S1-orderBook.git
 
 cd orderbook-project
 
