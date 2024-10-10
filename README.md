@@ -1,66 +1,36 @@
-## Foundry
+OrderBook
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+OrderBook est un contrat intelligent permettant de placer et de prendre des ordres d'achat et de vente pour des tokens ERC20 sur le réseau de test Sepolia d'Ethereum.
 
-Foundry consists of:
+Installation
+git clone https://github.com/votre-utilisateur/orderbook-project.git
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+cd orderbook-project
 
-## Documentation
+Installer les dépendances :
+foundryup : pour se mettre a jour s'y jamais
+forge install
 
-https://book.getfoundry.sh/
+Configuration
+touch .env
 
-## Usage
+Ajouter les variables d'environnement :
+ETH_PRIVATE_KEY=0xVotreCléPrivéeIci
+ALCHEMY_API_KEY=VotreCléAlchemyIci ou infura 
 
-### Build
+Déploiement
 
-```shell
-$ forge build
-```
+Compiler le projet :
+forge clean
+forge build
 
-### Test
+Déployer le contrat :
 
-```shell
-$ forge test
-```
+forge script script/OrderBookScript.sol:OrderBookScript \
+    --rpc-url https://eth-sepolia.g.alchemy.com/v2/VotreCléAlchemyIci \
+    --broadcast \
+    --sender 0xvotreAdresse
 
-### Format
 
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Utilisation
+Interagissez avec le contrat via Remix ou d'autres outils en utilisant l'adresse du contrat déployé.
